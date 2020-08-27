@@ -1,0 +1,1208 @@
+<!-- TOP PERSISTENT -->
+<div class="kh_top_cols">
+    <span>
+        <div class="kh_rpmain">
+            <span><label>Namn:</label></span>
+            <span><input type="text" name="attr_character_name" /></span>
+            <span><label>Värv:</label></span>
+            <span><input type="text" name="attr_varv" /></span>
+            <span><label>Folkslag:</label></span>
+            <span><input type="text" name="attr_folkslag" /></span>
+        </div>
+    </span>      
+    <!-- gard / hälsa --> 
+    <span>
+        <div class="kh_halsagard">
+            <h2>Hälsa</h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>Max:</label><input class="big_numbers" type="number" name="attr_halsa_max" />
+                    </td>
+                    <td>
+                        <label>Nuvarande:</label><input class="big_numbers" type="number" name="attr_halsa_current" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </span>
+    <span>
+        <div class="kh_halsagard">
+            <h2>Gard</h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>Max:</label><input class="big_numbers" type="number" name="attr_gard_max" />
+                    </td>
+                    <td>
+                        <label>Nuvarande:</label><input class="big_numbers" type="number" name="attr_gard_current" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </span>  
+</div>
+
+<hr>
+
+<!-- TABS -->
+<div>
+    <button type="action" name="act_rollperson" >Färdigheter/Strid</button>
+    <button type="action" name="act_utrustning" >Utrustning</button>
+    <button type="action" name="act_magi" >Besvärjelser</button>
+    <button type="action" name="act_bakgrund" >Beskrivning/Bakgrund</button>
+</div>
+<input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='rollperson'  />
+
+<!-- #################### RP MAIN TAB ########################## -->
+<div class='sheet-rollperson'>
+    <hr>
+    <div class="kh_fv_cols">
+        <span><h2>Grundfärdigheter</h2></span>
+        <span><h2>Stridsfärdigheter</h2></span>
+        <span>
+            <div class="fv_row">
+                <span>
+                    <label>Smidighet</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_smidighet_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_smidighet" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Smidighet}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{smidighet}}}" name="roll_smidighet"></button>
+                </span>
+            </div>
+
+            <div class="fv_row">
+                <span>
+                    <label>Styrka</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_styrka_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_styrka" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Styrka}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{styrka}}}" name="roll_styrka"></button>
+                </span>
+                
+            </div>
+                
+            <div class="fv_row">
+                <span>
+                    <label>Uthållighet</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_uthallighet_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_uthallighet" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Uthållighet}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{uthallighet}}}" name="roll_uthallighet"></button>
+                </span>
+                
+            </div>
+                
+            <div class="fv_row">
+                <span>
+                    <label>Utstrålning</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_utstralning_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_utstralning" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Utstrålning}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{utstralning}}}" name="roll_utstralning"></button>
+                </span>
+                
+            </div>
+                
+            <div class="fv_row">
+                <span>
+                    <label>Viljestyrka</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_viljestyrka_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_viljestyrka" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Viljestyrka}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{viljestyrka}}}" name="roll_viljestyrka"></button>
+                </span>
+                
+            </div>
+
+        </span>
+        <span>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Kastvapen</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_kastvapen_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_kastvapen" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Kastvapen}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{kastvapen}}}" name="roll_kastvapen"></button>
+                </span>
+                        
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Knivar</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_knivar_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_knivar" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Knivar}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{knivar}}}" name="roll_knivar"></button>
+                </span>          
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Skytte</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_skytte_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_skytte" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Skytte}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{skytte}}}" name="roll_skytte"></button>
+                </span>                        
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Sköldar</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_skoldar_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_skoldar" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Sköldar}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{skoldar}}}" name="roll_skoldar"></button>
+                </span>  
+                        
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Slagsmål</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_slagsmal_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_slagsmal" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Slagsmål}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{slagsmal}}}" name="roll_slagsmal"></button>
+                </span>  
+                        
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Spjut</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_spjut_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_spjut" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Spjut}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{spjut}}}" name="roll_spjut"></button>
+                </span>                       
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Svärd</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_svard_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_svard" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Svärd}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{svard}}}" name="roll_svard"></button>
+                </span>                           
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Yxor</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_yxor_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_yxor" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Yxor}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{yxor}}}" name="roll_yxor"></button>
+                </span> 
+                        
+            </div>
+        </span>
+    </div>
+    <hr>
+    <div class="kh_fv_cols_aventyr">
+        <span>
+            <h2>Äventyrsfärdigheter</h2>
+        </span>
+        <span>
+        </span>
+        <span>
+            <div class="fv_row">
+                <span>
+                    <label>Finna Dolda Ting</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_finnadoldating_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_finnadoldating" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Finna Dolda Ting}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{finnadoldating}}}" name="roll_finnadoldating"></button>
+                </span> 
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Fingerfärdighet</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_fingerfardighet_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_fingerfardighet" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Fingerfärdighet}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{fingerfardighet}}}" name="roll_fingerfardighet"></button>
+                </span> 
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Förleda</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_forleda_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_forleda" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Förleda}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{forleda}}}" name="roll_forleda"></button>
+                </span> 
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Gömma Sig</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_gommasig_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_gommasig" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Gömma Sig}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{gommasig}}}" name="roll_gommasig"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Handel</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_handel_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_handel" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Handel}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{handel}}}" name="roll_handel"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Insikt</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_insikt_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_insikt" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Insikt}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{insikt}}}" name="roll_insikt"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Hantverk</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_hantverk_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_hantverk" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Hantverk}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{hantverk}}}" name="roll_hantverk"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Jakt</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_jakt_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_jakt" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Jakt}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{jakt}}}" name="roll_jakt"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Lagkunskap</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_lagkunskap_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_lagkunskap" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Lagkunskap}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{lagkunskap}}}" name="roll_lagkunskap"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Legender</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_legender_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_legender" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Legender}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{legender}}}" name="roll_legender"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Läkekonst</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_lakekonst_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_lakekonst" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Läkekonst}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{lakekonst}}}" name="roll_lakekonst"></button>
+                </span> 
+            </div>
+        </span>
+        <!--COLBREAK-->
+        <span>
+            <div class="fv_row">
+                <span>
+                    <label>Lärdom</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_lardom_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_lardom" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Lärdom}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{lardom}}}" name="roll_lardom"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Musik</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_musik_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_musik" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Musik}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{musik}}}" name="roll_musik"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Rida</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_rida_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_rida" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Rida}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{rida}}}" name="roll_rida"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Sjömanskap</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_sjomanskap_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_sjomanskap" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Sjömanskap}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{sjomanskap}}}" name="roll_sjomanskap"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Spana</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_spana_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_spana" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Spana}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{spana}}}" name="roll_spana"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Spel</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_spel_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_spel" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Spel}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{spel}}}" name="roll_spel"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Språk</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_sprak_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_sprak" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Språk}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{sprak}}}" name="roll_sprak"></button>
+                </span> 
+            </div>
+            
+            <div class="fv_row">
+                <span>
+                    <label>Status</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_status_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_status" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Status}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{status}}}" name="roll_status"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Stigvana</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_stigvana_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_stigvana" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Stigvana}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{stigvana}}}" name="roll_stigvana"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Taktik</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_taktik_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_taktik" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Taktik}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{taktik}}}" name="roll_taktik"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Trolldom</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_trolldom_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_trolldom" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Trolldom}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{trolldom}}}" name="roll_trolldom"></button>
+                </span> 
+            </div>
+            
+            
+            <div class="fv_row">
+                <span>
+                    <label>Väderkunskap</label>
+                </span>
+                <span>
+                    <input class="fv_xp" type="checkbox" name="attr_vaderkunskap_xp" />
+                </span>
+                <span>
+                    <input class="fv_number" type="number" name="attr_vaderkunskap" />
+                </span>
+                <span>
+                    <button type="roll" value="&{template:ftest} {{name=Väderkunskap}} {{rp=@{character_name}}} {{slag=[[1d100]]}} {{fv=@{vaderkunskap}}}" name="roll_vaderkunskap"></button>
+                </span> 
+            </div>
+            
+        </span>
+    </div>
+    <hr>
+    <div class="sardrag_cols">
+        <span>
+            <label>Särdrag:</label>
+            <div class="sardrag_row">
+                <span>
+                    <input type="text" name="attr_sardrag1" />
+                </span>
+                <span>
+                    <input type="checkbox" name="attr_sardrag1_used" />
+                </span>
+            </div>
+            <div class="sardrag_row">
+                <span>
+                    <input type="text" name="attr_sardrag2" />
+                </span>
+                <span>
+                    <input type="checkbox" name="attr_sardrag2_used" />
+                </span>
+            </div>
+            <div class="sardrag_row">
+                <span>
+                    <input type="text" name="attr_sardrag3" />
+                </span>
+                <span>
+                    <input type="checkbox" name="attr_sardrag3_used" />
+                </span>
+            </div>
+            <div class="sardrag_row">
+                <span>
+                    <input type="text" name="attr_sardrag4" />
+                </span>
+                <span>
+                    <input type="checkbox" name="attr_sardrag4_used" />
+                </span>
+            </div>
+        </span>
+
+        <span>
+            <label>Förmågor:</label>
+                        
+            <div class="farmaga_row">
+                <label>Folkslagsförmåga:
+                <input type="text" name="attr_farmaga_folkslag" />
+                </label>        
+            </div>
+            <div class="farmaga_row">
+                    <label>Värvförmåga:
+                    <input type="text" name="attr_farmaga_varv" />
+                    </label>
+            </div>
+            
+            <div class="farmaga_row">
+                <label>Inlärda Förmågor:
+                <input type="text" name="attr_farmaga_inlard1" />
+                <input type="text" name="attr_farmaga_inlard2" />
+                <input type="text" name="attr_farmaga_inlard3" />
+                <input type="text" name="attr_farmaga_inlard4" />
+                </label>
+            </div>
+        </span>
+
+        <span>
+            <label>Språk:</label>
+            <textarea style="height: 100px; max-width: 300px;" name="attr_sprak_namn"></textarea>
+        </span>
+    </div>
+    <hr>
+
+    <!--VAPEN-->
+    <div class="vapen">
+        <div class="vapen_row">
+            <span><label>Vapen</label></span>
+            <span><label>Skada</label></span>
+            <span></span>
+            <span></span>
+            <span><label>Egenskaper</label></span>
+        </div>
+        <div class="vapen_row">
+            <span><input type="text" name="attr_vapen1_namn" /></span>
+            <span><input class="small_number" type="number" name="attr_vapen1_skada" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:vapen} {{name=@{vapen1_namn}}} {{roll=[[@{vapen1_skada}d6!]]}}" name="roll_vapen"></button></span>
+            <span><input type="text" name="attr_vapen1_egenskaper" /></span>
+        </div>
+        <div class="vapen_row">
+            <span><input type="text" name="attr_vapen2_namn" /></span>
+            <span><input class="small_number" type="number" name="attr_vapen2_skada" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:vapen} {{name=@{vapen2_namn}}} {{roll=[[@{vapen2_skada}d6!]]}}" name="roll_vapen"></button></span>
+            <span><input type="text" name="attr_vapen2_egenskaper" /></span>
+        </div>
+        <div class="vapen_row">
+            <span><input type="text" name="attr_vapen3_namn" /></span>
+            <span><input class="small_number" type="number" name="attr_vapen3_skada" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:vapen} {{name=@{vapen3_namn}}} {{roll=[[@{vapen3_skada}d6!]]}}" name="roll_vapen"></button></span>
+            <span><input type="text" name="attr_vapen3_egenskaper" /></span>
+        </div>
+        <div class="vapen_row">
+            <span><input type="text" name="attr_vapen4_namn" /></span>
+            <span><input class="small_number" type="number" name="attr_vapen4_skada" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:vapen} {{name=@{vapen4_namn}}} {{roll=[[@{vapen4_skada}d6!]]}}" name="roll_vapen"></button></span>
+            <span><input type="text" name="attr_vapen4_egenskaper" /></span>
+        </div>
+        <div class="vapen_row">
+            <span><input type="text" name="attr_vapen5_namn" /></span>
+            <span><input class="small_number" type="number" name="attr_vapen5_skada" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:vapen} {{name=@{vapen5_namn}}} {{roll=[[@{vapen5_skada}d6!]]}}" name="roll_vapen"></button></span>
+            <span><input type="text" name="attr_vapen5_egenskaper" /></span>
+        </div>
+
+    </div>
+
+    <!-- RUSTNING -->
+    <br>
+    <div class="rustning">
+        <div class="rustning_row">
+            <span><label>Rustning</label></span>
+            <span><label>Skydd</label></span>
+            <span></span>
+            <span></span>
+            <span><label>Egenskaper</label></span>
+            <span><label>Initiativ</label></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="rustning_row">
+            <span><input type="text" name="attr_rustning1_namn" /></span>
+            <span><input class="small_number" type="number" name="attr_rustning1_skydd" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:rustning} {{name=@{rustning1_namn}}} {{roll=[[@{rustning1_skydd}d6?{Hjälm som passar (exploderande tärningar)?|Ja,! hjälm|Nej, ingen hjälm}]]}}" name="roll_rustning"></button></span>
+            <span><input type="text" name="attr_rustning1_egenskaper" /></span>
+
+            <span><input class="small_number" type="number" name="attr_rustning1_init" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:init} {{name=@{character_name}}} {{roll=[[@{rustning1_init}d6k2]]}}" name="roll_init"></button></span>
+        </div>
+        <div class="rustning_row">
+            <span><input type="text" name="attr_rustning2_namn" /></span>
+            <span><input class="small_number" type="number" name="attr_rustning2_skydd" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:rustning} {{name=@{rustning2_namn}}} {{roll=[[@{rustning2_skydd}d6?{Hjälm som passar (exploderande tärningar)?|Ja,! hjälm|Nej, ingen hjälm}]]}}" name="roll_rustning"></button></span>
+            <span><input type="text" name="attr_rustning1_egenskaper" /></span>
+
+            <span><input class="small_number" type="number" name="attr_rustning2_init" /></span>
+            <span><h3>T6</h3></span>
+            <span><button type="roll" value="&{template:init} {{name=@{character_name}}} {{roll=[[@{rustning2_init}d6k2]]}}" name="roll_init"></button></span>
+        </div>
+    </div>
+    <hr>
+    <!-- INLÄRNING -->
+    <label>Inlärning</label>
+    <div class="inlarning_cols">
+        <span>
+            <div>Språk/Förmåga/Besvärjelse:</div>
+            <span><input type="text" name="attr_inlarning_1" /></span>
+            <div class="inlarning-row">
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb1" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb2" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb3" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb4" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb5" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb6" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb7" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_1_cb8" /></span>
+            </div>
+        </span>
+
+        <span>
+            <div>Språk/Förmåga/Besvärjelse:</div>
+            <span><input type="text" name="attr_inlarning_2" /></span>
+            <div class="inlarning-row">
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb1" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb2" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb3" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb4" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb5" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb6" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb7" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_2_cb8" /></span>
+            </div>
+        </span>
+
+        <span>
+            <div>Språk/Förmåga/Besvärjelse:</div>
+            <span><input type="text" name="attr_inlarning_3" /></span>
+            <div class="inlarning-row">
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb1" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb2" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb3" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb4" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb5" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb6" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb7" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_3_cb8" /></span>
+            </div>
+        </span>
+
+        <span>
+            <div>Språk/Förmåga/Besvärjelse:</div>
+            <span><input type="text" name="attr_inlarning_4" /></span>
+            <div class="inlarning-row">
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb1" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb2" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb3" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb4" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb5" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb6" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb7" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_4_cb8" /></span>
+            </div>
+        </span>
+
+        <span>
+            <div>Språk/Förmåga/Besvärjelse:</div>
+            <span><input type="text" name="attr_inlarning_5" /></span>
+            <div class="inlarning-row">
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb1" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb2" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb3" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb4" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb5" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb6" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb7" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_5_cb8" /></span>
+            </div>
+        </span>
+
+        <span>
+            <div>Språk/Förmåga/Besvärjelse:</div>
+            <span><input type="text" name="attr_inlarning_6" /></span>
+            <div class="inlarning-row">
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb1" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb2" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb3" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb4" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb5" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb6" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb7" /></span>
+                <span><input class="fv_xp" type="checkbox" name="attr_inlarning_6_cb8" /></span>
+            </div>
+        </span>
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- ################## UTRUSTNING TAB ######################## -->
+<div class='sheet-utrustning'>
+    <hr>
+    <h2>Utrustning</h2>
+    <textarea style="height: 200px; max-width: 800px;" name="attr_utrustning_text"></textarea>
+
+    <h2>Värdesaker</h2>
+    <textarea style="height: 200px; max-width: 800px;" name="attr_vardesaker_text"></textarea>
+</div>
+
+
+
+<!-- ################## UTRUSTNING MAGI ######################## -->
+<div class='sheet-magi'>
+    <hr>
+    <h2>Skuld</h2>
+    <div class="skuld-grid">
+        <span><label>Max:</label></span>
+        <span><label>Nuvarande:</label></span>
+        <span><input class="medium_number" type="number" name="attr_skuld_max" /></span>
+        <span><input class="medium_number" type="number" name="attr_skuld_current" /></span>
+    </div>
+    
+    <br><br>
+
+    <h2>Besvärjelser</h2>
+
+    <div class="besvarjelser-cols">
+        <span>
+            <div class="besvarjelse-row">
+                <span><h3>Namn</h3></span>
+                <span><h3>Kostnad</h3></span>
+                <span></span>
+                <span></span>
+                <span><h3>Svårighet</h3></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_1_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_1_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:skuld} {{name=@{besvarjelse_1_namn}}} {{roll=[[@{besvarjelse_1_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_1_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_2_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_2_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_2_namn}}} {{roll=[[@{besvarjelse_2_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_2_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_3_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_3_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_3_namn}}} {{roll=[[@{besvarjelse_3_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_3_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_4_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_4_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_4_namn}}} {{roll=[[@{besvarjelse_4_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_4_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_5_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_5_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_5_namn}}} {{roll=[[@{besvarjelse_5_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_5_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_6_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_6_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_6_namn}}} {{roll=[[@{besvarjelse_6_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_6_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_7_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_7_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_7_namn}}} {{roll=[[@{besvarjelse_7_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_7_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_8_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_8_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_8_namn}}} {{roll=[[@{besvarjelse_8_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_8_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_9_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_9_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_9_namn}}} {{roll=[[@{besvarjelse_9_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_9_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_10_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_10_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_10_namn}}} {{roll=[[@{besvarjelse_10_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_10_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_11_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_11_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_11_namn}}} {{roll=[[@{besvarjelse_11_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_11_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_12_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_12_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_12_namn}}} {{roll=[[@{besvarjelse_12_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_12_svarighet" style="max-width: 80px;" /></span>
+            </div>
+        </span>
+        <span style="border-left: 1px solid silver;"></span>
+        <span>
+            <div class="besvarjelse-row">
+                <span><h3>Namn</h3></span>
+                <span><h3>Kostnad</h3></span>
+                <span></span>
+                <span></span>
+                <span><h3>Svårighet</h3></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_13_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_13_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_13_namn}}} {{roll=[[@{besvarjelse_13_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_13_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_14_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_14_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_14_namn}}} {{roll=[[@{besvarjelse_14_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_14_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_15_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_15_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_15_namn}}} {{roll=[[@{besvarjelse_15_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_15_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_16_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_16_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_16_namn}}} {{roll=[[@{besvarjelse_16_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_16_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_17_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_17_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_17_namn}}} {{roll=[[@{besvarjelse_17_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_17_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_18_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_18_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_18_namn}}} {{roll=[[@{besvarjelse_18_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_18_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_19_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_19_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_19_namn}}} {{roll=[[@{besvarjelse_19_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_19_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_20_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_20_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_20_namn}}} {{roll=[[@{besvarjelse_20_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_20_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_21_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_21_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_21_namn}}} {{roll=[[@{besvarjelse_21_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_21_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_22_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_22_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_22_namn}}} {{roll=[[@{besvarjelse_22_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_22_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_23_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_23_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_23_namn}}} {{roll=[[@{besvarjelse_23_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_23_svarighet" style="max-width: 80px;" /></span>
+            </div>
+
+            <div class="besvarjelse-row">
+                <span><input type="text" name="attr_besvarjelse_24_namn" style="max-width: 150px;"/></span>
+                <span><input class="small_number" type="number" name="attr_besvarjelse_24_kostnad" /></span>
+                <span><h3>T6</h3></span>
+                <span><button type="roll" value="&{template:default} {{name=@{besvarjelse_24_namn}}} {{roll=[[@{besvarjelse_24_kostnad}d6]]}}" name="roll_kostnad"></button></span>
+                <span><input type="text" name="attr_besvarjelse_24_svarighet" style="max-width: 80px;" /></span>
+            </div>
+        </span>
+    </div>
+
+
+</div>
+
+
+<!-- ################## UTRUSTNING BAKGRUND ######################## -->
+<div class='sheet-bakgrund'>
+    <hr>
+    <h2>Beskrivning</h2>
+    <textarea style="height: 200px; max-width: 800px;" name="attr_beskrivning_text"></textarea>
+
+    <h2>Bakgrund</h2>
+    <textarea style="height: 200px; max-width: 800px;" name="attr_bakgrund_text"></textarea>
+</div>
+
+
+
+
+
+<rolltemplate class="sheet-rolltemplate-ftest">
+    <div class="template_container">
+        <div class="template-header"><h2>{{name}}</h2></div>
+        <div class="template-row"><h3 style="color: green;">{{rp}}</h3></div>
+        <div class="template-row"><h3 style="color: green;">FV: {{fv}}</h3></div>
+        <div class="template-row"><h3>Slag: {{slag}}</h3></div>
+        
+    </div>
+</rolltemplate>
+
+
+<rolltemplate class="sheet-rolltemplate-vapen">
+    <div class="template_container">
+        <div class="template-header"><h2>{{name}}</h2></div>
+        <div class="template-row"><h3>Skada: {{roll}}</h3></div>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-rustning">
+    <div class="template_container">
+        <div class="template-header"><h2>{{name}}</h2></div>
+        <div class="template-row"><h3>Skydd: {{roll}}</h3></div>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-init">
+    <div class="template_container">
+        <div class="template-header"><h2>{{name}}</h2></div>
+        <div class="template-row"><h3>Initiativ: {{roll}}</h3></div>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-skuld">
+    <div class="template_container">
+        <div class="template-header"><h2>{{name}}</h2></div>
+        <div class="template-row"><h3>Skuld: {{roll}}</h3></div>
+    </div>
+</rolltemplate>
+
+
+
+<script type="text/worker">
+    const buttonlist = ["rollperson","utrustning","magi", "bakgrund"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+</script>

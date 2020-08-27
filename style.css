@@ -1,0 +1,211 @@
+/*Configure the tab buttons*/
+.sheet-rollperson,
+.sheet-utrustning,
+.sheet-magi,
+.sheet-bakgrund {
+	display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="rollperson"] ~ div.sheet-rollperson,
+.sheet-tabstoggle[value="utrustning"] ~ div.sheet-utrustning,
+.sheet-tabstoggle[value="magi"] ~ div.sheet-magi,
+.sheet-tabstoggle[value="bakgrund"] ~ div.sheet-bakgrund {
+	display: block;
+}
+
+.sheet-kh_top_cols{
+	display: grid;
+	grid-template-columns: 300px 200px 200px; 
+	grid-template-rows: 120px;
+	padding-top: 20px;
+}
+
+.sheet-kh_rpmain{
+	display: grid;
+	grid-template-columns: 80px 120px;
+	grid-template-rows: 30px 30px 30px;
+	padding-top: 20px;
+}
+
+.sheet-kh_halsagard{
+	text-align: center;
+	padding-left: 100px;
+}
+
+input.sheet-big_numbers {
+	height: 50px;
+	width: 50px;
+	font-size:18px;
+	text-align:center;
+  }
+
+input.sheet-medium_number {
+height: 40px;
+width: 40px;
+font-size:15px;
+text-align:center;
+}
+
+input.sheet-small_number {
+width: 40px;
+font-size:12px;
+text-align:center;
+}
+
+input.sheet-big_numbers::-webkit-inner-spin-button, 
+input.sheet-big_numbers::-webkit-outer-spin-button,
+input.sheet-small_number::-webkit-inner-spin-button,
+input.sheet-small_number::-webkit-outer-spin-button { 
+  opacity: 1;
+}
+
+input.sheet-fv_number {
+	min-width: 25px;
+	height: 25px;
+	padding:5px;
+	font-size:11px;
+	text-align:center;
+	-moz-appearance:textfield;
+  }
+  
+  input.sheet-fv_number::-webkit-inner-spin-button, 
+  input.sheet-fv_number::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	margin: 0;
+  }
+
+.sheet-kh_fv_cols{
+	display: grid;
+	grid-template-columns: 400px 400px;
+	grid-template-rows: 50px 310px;
+}
+
+.sheet-kh_fv_cols_aventyr{
+	display: grid;
+	grid-template-columns: 400px 400px;
+	grid-template-rows: 50px 460px;
+}
+
+.sheet-fv_row {
+	display: grid;
+	grid-template-columns: 120px 30px 60px 50px 60px;
+	grid-template-rows: 35px;
+	padding-top: 3px;
+  }
+  
+  .sheet-fv_row span{
+	line-height: 60px;
+	border-top: solid silver 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .sheet-fv_row label{
+	padding-top: 10px;
+	font-size: 12px;
+  }
+
+
+.sheet-rolltemplate-ftest .sheet-template_container,
+.sheet-rolltemplate-vapen .sheet-template_container,
+.sheet-rolltemplate-rustning .sheet-template_container,
+.sheet-rolltemplate-init .sheet-template_container,
+.sheet-rolltemplate-skuld .sheet-template_container{
+	background-color: silver;
+	padding-bottom: 5px;
+}
+.sheet-rolltemplate-ftest .sheet-template-header{
+	background-color: rgb(41, 41, 54);
+	padding: 5px;
+}
+
+.sheet-rolltemplate-vapen .sheet-template-header{
+	background-color: rgb(93, 23, 23);
+	padding: 5px;
+}
+
+.sheet-rolltemplate-skuld .sheet-template-header{
+	background-color: rgb(93, 23, 23);
+	padding: 5px;
+}
+
+.sheet-rolltemplate-rustning .sheet-template-header,
+.sheet-rolltemplate-init .sheet-template-header{
+	background-color: rgb(46, 88, 49);
+	padding: 5px;
+}
+
+.sheet-rolltemplate-ftest .sheet-template-row,
+.sheet-rolltemplate-vapen .sheet-template-row,
+.sheet-rolltemplate-rustning .sheet-template-row,
+.sheet-rolltemplate-init .sheet-template-row,
+.sheet-rolltemplate-skuld .sheet-template-row{
+	padding-left: 3px;
+	padding-left: 5px;
+}
+
+.sheet-rolltemplate-ftest h2,
+.sheet-rolltemplate-vapen h2,
+.sheet-rolltemplate-rustning h2,
+.sheet-rolltemplate-init h2,
+.sheet-rolltemplate-skuld h2{
+	color: white;
+}
+
+.sheet-sardrag_cols{
+	display: grid;
+	grid-template-columns: 280px 250px 220px;
+	grid-template-rows: 245px;
+}
+
+.sheet-farmaga_row label{
+padding-top: 0px;
+font-size: 12px;
+}
+.sheet-farmaga_row input{
+	padding-top: 0%;
+}
+
+.sheet-vapen_row{
+	display: grid;
+	grid-template-columns: 225px 45px 25px 50px 220px;
+	grid-template-rows: 30px;
+}
+
+.sheet-rustning_row{
+	display: grid;
+	grid-template-columns: 225px 45px 25px 50px 230px 45px 25px 50px;
+	grid-template-rows: 30px;
+}
+
+.sheet-inlarning_cols{
+	display: grid;
+	grid-template-columns: 250px 250px 250px;
+	grid-template-rows: 90px;
+}
+
+.sheet-inlarning_row{
+	display: grid;
+	grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px;
+	grid-template-rows: 30px;
+}
+
+.sheet-skuld-grid{
+	display: grid;
+	grid-template-columns: 80px 80px;
+	grid-template-rows: 30px 40px;
+}
+
+.sheet-besvarjelser-cols{
+	display: grid;
+	grid-template-columns: 380px 30px 380px;
+	grid-template-rows: 500px;
+}
+
+.sheet-besvarjelse-row{
+	display: grid;
+	grid-template-columns: 160px 45px 25px 35px 100px;
+	grid-template-rows: 50px;
+}
